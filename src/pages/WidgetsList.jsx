@@ -15,7 +15,7 @@ import { useCollection } from "react-firebase-hooks/firestore";
 import { useClipboard } from "@mantine/hooks";
 
 export default function WidgetsList({ user }) {
-	const [snapshot, loading, error] = useCollection(
+	const [snapshot, loading] = useCollection(
 		collection(db, "users", user?.uid, "widgets"),
 		{
 			snapshotListenOptions: { includeMetadataChanges: true },
