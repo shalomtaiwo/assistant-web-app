@@ -7,7 +7,7 @@ import { auth } from "./config/firebase-config";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Layout from "./components/layout/Layout";
 import { Authentication } from "./pages/auth/Authentication";
-import WidgetsList from "./pages/widgetsList";
+import WidgetsList from "./pages/Widgets";
 
 const AuthRoute = () => {
 	const [user, loading] = useAuthState(auth);
