@@ -11,8 +11,6 @@ import {
 	Anchor,
 	Stack,
 } from "@mantine/core";
-import { GoogleButton } from "./GoogleButton";
-import { TwitterButton } from "./TwitterButton";
 import { loginUser, registerUser } from "../../AuthService";
 import { useState } from "react";
 
