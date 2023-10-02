@@ -75,20 +75,10 @@ export function Authentication(props) {
 					size="lg"
 					fw={500}
 				>
-					Welcome to Assistant, {type} with
+					Welcome to Assistant, {type} with Email
 				</Text>
 
-				<Group
-					grow
-					mb="md"
-					mt="md"
-				>
-					<GoogleButton radius="xl">Google</GoogleButton>
-					<TwitterButton radius="xl">Twitter</TwitterButton>
-				</Group>
-
 				<Divider
-					label="Or continue with email"
 					labelPosition="center"
 					my="lg"
 				/>
