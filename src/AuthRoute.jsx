@@ -8,6 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import Layout from "./components/layout/Layout";
 import { Authentication } from "./pages/auth/Authentication";
 import WidgetsList from "./pages/Widgets";
+import EditAssistant from "./pages/EditAssistant";
 
 const AuthRoute = () => {
 	const [user, loading] = useAuthState(auth);
@@ -35,7 +36,7 @@ const AuthRoute = () => {
 				/>
 				<Route
 					path="/widgets/:id"
-					element={<WidgetDetails user={user}  />}
+					element={<EditAssistant user={user}  />}
 				/>
 			</Route>
 			<Route

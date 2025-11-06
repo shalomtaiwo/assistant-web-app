@@ -10,6 +10,7 @@ import {
 	Modal,
 	Paper,
 	Fieldset,
+	Select,
 } from "@mantine/core";
 import { IconTrash } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";
@@ -69,15 +70,17 @@ function ModalForm({ user, close }) {
 		</Group>
 	));
 
-    const [loading, setLoading] = useState(false)
-	const addAssistant = (features, domain, title) => {
-        setLoading(true)
-		addNavigationList(user.uid, features, domain, title).then(()=>{
-            console.log("Data added successfully.");
-            setLoading(false);
-            close()
-        })
+	const [loading, setLoading] = useState(false);
+	const addAssistant = (features, domain, title, avatar) => {
+		setLoading(true);
+		addNavigationList(user.uid, features, domain, title, avatar).then(() => {
+			console.log("Data added successfully.");
+			setLoading(false);
+			close();
+		});
 	};
+
+	// console.log(form.values.avatar);
 
 	return (
 		<Paper
@@ -137,7 +140,7 @@ function ModalForm({ user, close }) {
 					fullWidth
 					mt={30}
 					type="submit"
-                    loading={loading}
+					loading={loading}
 				>
 					Create Assistant
 				</Button>
@@ -162,7 +165,10 @@ export default function AddModal() {
 					blur: 3,
 				}}
 			>
-				<ModalForm user={user} close={close} />
+				<ModalForm
+					user={user}
+					close={close}
+				/>
 			</Modal>
 
 			<Button onClick={open}>Add Assistant</Button>

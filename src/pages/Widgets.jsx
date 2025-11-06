@@ -13,6 +13,7 @@ import { db } from "../config/firebase-config";
 import { collection } from "firebase/firestore";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { useClipboard } from "@mantine/hooks";
+import { useNavigate } from "react-router-dom";
 
 export default function WidgetsList({ user }) {
 	const [snapshot, loading] = useCollection(
@@ -23,6 +24,8 @@ export default function WidgetsList({ user }) {
 	);
 
 	const clipboard = useClipboard({ timeout: 500 });
+
+	const navigate = useNavigate();
 
 	const rows =
 		!loading &&
@@ -59,6 +62,7 @@ export default function WidgetsList({ user }) {
 								<ActionIcon
 									variant="subtle"
 									color="gray"
+									onClick={() => navigate(`/widgets/${doc.id}`)}
 								>
 									<IconPencil
 										style={{ width: rem(16), height: rem(16) }}

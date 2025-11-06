@@ -38,15 +38,9 @@ export function Authentication(props) {
 	const handleAuth = () => {
 		setLoading(true);
 		if (type === "register") {
-			registerUser(form.values.email, form.values.password, form.values.name);
-			setTimeout(() => {
-				setLoading(false);
-			}, 3000);
+			registerUser(form.values.email, form.values.password, setLoading);
 		} else {
-			loginUser(form.values.email, form.values.password);
-			setTimeout(() => {
-				setLoading(false);
-			}, 3000);
+			loginUser(form.values.email, form.values.password, setLoading);
 		}
 	};
 
@@ -83,7 +77,7 @@ export function Authentication(props) {
 
 				<form onSubmit={form.onSubmit((values) => handleAuth())}>
 					<Stack>
-						{type === "register" && (
+						{/* {type === "register" && (
 							<TextInput
 								label="Name"
 								placeholder="Your name"
@@ -94,12 +88,12 @@ export function Authentication(props) {
 								}
 								radius="md"
 							/>
-						)}
+						)} */}
 
 						<TextInput
 							required
 							label="Email"
-							placeholder="hello@mantine.dev"
+							placeholder="hello@assistant.dev"
 							value={form.values.email}
 							onChange={(event) =>
 								form.setFieldValue("email", event.currentTarget.value)

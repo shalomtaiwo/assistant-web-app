@@ -7,11 +7,12 @@ import {
 import { auth } from "./config/firebase-config";
 
 // User registration
-export const registerUser = async (email, password, username) => {
+export const registerUser = async (email, password, setLoading) => {
 	try {
 		await createUserWithEmailAndPassword(auth, email, password).then(() => {});
 		console.log("Account created successfully");
 		setTimeout(() => {
+			setLoading(false);
 			window.location.replace("/");
 		}, 2000);
 	} catch (error) {
@@ -21,11 +22,12 @@ export const registerUser = async (email, password, username) => {
 };
 
 // User login
-export const loginUser = async (email, password) => {
+export const loginUser = async (email, password, setLoading) => {
 	try {
 		await signInWithEmailAndPassword(auth, email, password).then(() => {
 			console.log("Logged in successfully");
 			setTimeout(() => {
+				setLoading(false);
 				window.location.replace("/");
 			}, 2000);
 		});
