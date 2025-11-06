@@ -10,7 +10,6 @@ import {
     Textarea,
     Paper,
     Fieldset,
-    Select,
 } from "@mantine/core";
 import { IconTrash } from "@tabler/icons-react";
 

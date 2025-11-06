@@ -10,7 +10,6 @@ import {
 	Modal,
 	Paper,
 	Fieldset,
-	Select,
 } from "@mantine/core";
 import { IconTrash } from "@tabler/icons-react";
 import { useDisclosure } from "@mantine/hooks";

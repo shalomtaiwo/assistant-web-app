@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import WidgetDetails from "./pages/WidgetDetails";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { auth } from "./config/firebase-config";
 import { useAuthState } from "react-firebase-hooks/auth";
